@@ -40,6 +40,34 @@
         <version>6.1.24</version>
         <configuration>
           <contextPath>/</contextPath>
+
+          <!-- use the test classpath for loading resources, since this takes priority -->
+          <testClassesDirectory>src/main/resources</testClassesDirectory>
+          <useTestClasspath>true</useTestClasspath>
+
+          <systemProperties>
+            <systemProperty>
+              <!-- always reload views during debugging -->
+              <name>stapler.jelly.noCache</name>
+              <value>true</value>
+            </systemProperty>
+            <systemProperty>
+              <!-- show the stapler evaluation during execution -->
+              <name>stapler.trace</name>
+              <value>true</value>
+            </systemProperty>
+            <systemProperty>
+              <!-- always reload scripts during debugging -->
+              <name>hudson.script.noCache</name>
+              <value>true</value>
+            </systemProperty>
+            <systemProperty>
+              <!-- load view resources from the source directly, again for real time change -->
+              <name>stapler.resourcePath</name>
+              <value>../src/main/resources</value>
+            </systemProperty>
+          </systemProperties>
+
         </configuration>
       </plugin>
     </plugins>
