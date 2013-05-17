@@ -1,12 +1,14 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.kohsuke.stapler</groupId>
   <artifactId>stapler-archetype</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>stapler-archetype Maven Webapp</name>
-  
+
   <dependencies>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -26,6 +28,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <finalName>${project.artifactId}</finalName>
     <plugins>
@@ -40,11 +43,9 @@
         <version>6.1.24</version>
         <configuration>
           <contextPath>/</contextPath>
-
           <!-- use the test classpath for loading resources, since this takes priority -->
           <testClassesDirectory>src/main/resources</testClassesDirectory>
           <useTestClasspath>true</useTestClasspath>
-
           <systemProperties>
             <systemProperty>
               <!-- always reload views during debugging -->
@@ -67,9 +68,9 @@
               <value>../src/main/resources</value>
             </systemProperty>
           </systemProperties>
-
         </configuration>
       </plugin>
     </plugins>
   </build>
 </project>
+
