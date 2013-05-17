@@ -1,5 +1,11 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core">
 <html>
   <body>
     <h1>Hello World!</h1>
+    <j:forEach var="i" items="${it.items}">
+        <a href="items/${i.key}">${i.value.name}</a><br/>
+    </j:forEach>
   </body>
 </html>
+</j:jelly>
